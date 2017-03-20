@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  database: simple_logger_server-development
+  host: localhost
+
+production:
+  <<: *default
+  database: <%= ENV['DB_NAME'] || "simple_logger_server-production" %>
+  host: <%= ENV['DB_HOST'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: simple_logger_server-test
