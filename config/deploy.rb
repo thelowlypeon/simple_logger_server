@@ -2,7 +2,7 @@
 lock "3.8.0"
 
 set :application, "simple_logger"
-set :repo_url, "git@bitbucket.org:thelowlypeon/simple_logger.git"
+set :repo_url, "git@github.com:thelowlypeon/simple_logger.git"
 
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
