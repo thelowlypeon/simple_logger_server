@@ -3,10 +3,12 @@ server 'simple_logger',
   roles: %w{app web}
 
 namespace :deploy do
-  task :restart_unicorn do
-    `/home/deploy/bin/unicorn_server restart`
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      puts `pwd`
+      `/home/deploy/bin/unicorn_server restart`
+    end
   end
 
-  after "finishing", "deploy:restart_unicorn"
+  after :finishing, "deploy:cleanup"
 end
-
