@@ -60,6 +60,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rbenv
   pg
+  rack
   sinatra-activerecord
 
 BUNDLED WITH
