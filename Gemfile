@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rack'
 gem "pg"
 gem "sinatra-activerecord", require: 'sinatra/activerecord'
 
